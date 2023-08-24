@@ -21,3 +21,4 @@ else:
                 desaprob_n_i = int(input("ingrese cantidad de desaprobados: "))
                 aprobados = (aprob_n_i/(aprob_n_i + desaprob_n_i))*100
                 print("El porcentaje de alumnos aprobados es: %",aprobados)
+                

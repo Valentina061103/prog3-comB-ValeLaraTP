@@ -14,10 +14,10 @@ else:
             print("error,numero de mes no valido")
         else:
             print(fecha)
-            if dia_sem : "lunes"
-            nivel_inicial = str(input("¿Hubo examen? "))
-            if nivel_inicial : "si"
-            aprob_n_i = int(input("ingrese cantidad de aprobados: "))
-            desaprob_n_i = int(input("ingrese cantidad de desaprobados: "))
-            aprobados = (aprob_n_i/(aprob_n_i + desaprob_n_i))*100
-            print("El porcentaje de alumnos aprobados es: %",aprobados)
+            if dia_sem == "lunes" or dia_sem == "martes" or dia_sem == "miercoles":
+                nivel_inicial = str(input("¿Hubo examen? "))
+            if nivel_inicial == "si":
+                aprob_n_i = int(input("ingrese cantidad de aprobados: "))
+                desaprob_n_i = int(input("ingrese cantidad de desaprobados: "))
+                aprobados = (aprob_n_i/(aprob_n_i + desaprob_n_i))*100
+                print("El porcentaje de alumnos aprobados es: %",aprobados)

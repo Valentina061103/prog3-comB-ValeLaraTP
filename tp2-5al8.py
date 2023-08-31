@@ -45,5 +45,3 @@ if cantidad_lapices >= 1000:
 else:
     sin_descuento = precio*cantidad_lapices
     print("Por la compra de ", cantidad_lapices, "usted no tiene acceso a un descuento, su total es: ", sin_descuento)
-
-

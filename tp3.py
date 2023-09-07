@@ -14,7 +14,8 @@ postitive_num= int(input("Ingrese un numero entero positivo : "))
 odd_numbers=0 
 for e in range(postitive_num+1): 
     if e%2!=0 : 
-        odd_numbers+=1 
+        odd_numbers+=1
+        print(f" La cantidad de numeros impares es :  {odd_numbers}") 
 
 #4 ​Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás desde ese número hasta cero separados por comas. 
 num= int(input("Ingrese un numero entero positivo : ")) 
@@ -40,7 +41,44 @@ for i in range(numero+1):
         print("*",end=" ") 
         print(" ") 
 
-print(f" La cantidad de numeros impares es :  {odd_numbers}") 
+#7 Escribir un programa que muestre por pantalla las tablas de multiplicar del 1 al 10.
+for i in range(1,11):
+    for j in range(1,11):
+        print(f"{i}x{j}= {i*j}")
+
+#8 Escribir un programa que pida al usuario un número entero y muestre por pantalla un triángulo rectángulo como el de más abajo
+n = int(input("introduce la altura del triangulo (entero positivo): "))
+for i in range(1, n+1, 2):
+    for j in range(i, 0, -2):
+        print(j, end=" ")
+        print(" ")
+
+#9 Escribir un programa que almacene la cadena de caracteres contraseña en una variable, pregunte al usuario por la contraseña hasta que introduzca la contraseña correcta
+password = "contraseña"
+password2 = "u"
+
+while (password != password2):
+    password2  = input("ingrese la contraseña: ").lower()
+
+#10 Escribir un programa que pida al usuario un número entero y muestre por pantalla si es un número primo o no.
+divider = 0
+while True:
+    num = int(input("Ingrese un número positivo, para indicar si es o no primo: "))
+    if num<=0:
+        break
+    for i in range(num):
+        if num%(i+1) == 0 :
+            divider += 1
+    if divider == 2:
+        print("Es un número primo")
+    else:
+        print("No es primo")
+
+#11 Escribir un programa que pida al usuario una palabra y luego muestre por pantalla una a una las letras de la palabra introducida empezando por la última.
+word = str(input("ingrese una palabra: "))
+word2 = word[::-1]
+
+
 #15 Escriba un programa que pida un número entero mayor que cero y que escriba sus divisores
 while True:
     num = int(input("Escriba el numero del cual quiere conocer sus divisores: "))

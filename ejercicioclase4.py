@@ -17,15 +17,18 @@ for i  in range(5):
 #Ejercicio 2
 digitos_pares = 0
 digitos_impares = 0
+out = 0
 out = input("Bienvenido para ingresar empezar ingrese 1: ")
 while out != 0:
+    if out == 0:
+        break
     num = int(input("ingrese los numeros que quiere analizar: "))
     if num % 2 == 0:
         print(f"{num} es par")
         digitos_pares += 1
+        out = int(input("desea agregar otro numero? Presione 1 para 'SI' y 0 para 'NO': "))
     elif num % 2 != 0:
         print(f"{num} es impar")
         digitos_impares += 1
-        out = input("desea agregar otro numero? Presione 1 para 'SI' y 0 para 'NO': ")
-    if out == 0:
-        break
+        out = int(input("desea agregar otro numero? Presione 1 para 'SI' y 0 para 'NO': "))
+print(f"la cantidad de pares ingresados fueron {digitos_pares} y de impares {digitos_impares}")

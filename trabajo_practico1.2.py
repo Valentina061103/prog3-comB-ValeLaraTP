@@ -53,10 +53,11 @@ promedio= (val1+val2+val3)/3
 print(f"El promedo de los numeros es : {promedio}")
 
 # Ejer7
-minutos= int(input("Ingrese la cantidad de minutos"))
+minutos= int(input("Ingrese la cantidad de minutos: "))
 horas= minutos/60
-
-print(f" La cantidad de horas es : {horas}")
+horas_solo = horas.__trunc__()
+minutos_restantes = minutos%60
+print(f"{minutos} minutos son: {horas_solo} con {minutos_restantes} minutos")
 
 # Ejer8
 
@@ -152,22 +153,14 @@ propina=cena%10
 cena+=  propina + servicio 
 
 # Ejer19
-
-# dd/mm/aaaa
-
-import datetime
-
 dia=int(input("Ingrese su dia de nacimiento: "))
 mes=int(input("Ingrese su mes de nacimiento: "))
 anio=int(input("Ingrese su anio de nacimiento: "))
+print(f"su fecha de nacimiento es {dia}/{mes}/{anio}")
 
 # Ejer20
-
-dia=int(input("Ingrese su dia de nacimiento: "))
-mes=int(input("Ingrese su mes de nacimiento: "))
-anio=int(input("Ingrese su año de nacimiento: "))
-fecha=datetime.date(anio, mes, dia).strftime('%d/%m/%Y')
-print(fecha)
+nacimiento = input("ingrese su fecha de nacimiento formato DD MM AAAA: ")
+print(nacimiento.replace(" ", "/"))
 
 #Ejer21
 

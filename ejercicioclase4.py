@@ -15,16 +15,17 @@ for i  in range(5):
     print(f'El mensaje encriptado es: {mensaje_encriptado}')
 
 #Ejercicio 2
-
-num=1
-digito_p=0
-digito_imp=0
-while int(num>0 and num!=0):
-    
-    num=int(input("Ingrese un numero: "))
-    if int(num%2==0):
-        digito_p=1+digito_p
-    elif int(num%2!=0):
-        digito_imp=1+digito_imp
-print(f"digito pares: {digito_p}") 
-print(f"Digito impares:{digito_imp}")
+digitos_pares = 0
+digitos_impares = 0
+out = input("Bienvenido para ingresar empezar ingrese 1: ")
+while out != 0:
+    num = int(input("ingrese los numeros que quiere analizar: "))
+    if num % 2 == 0:
+        print(f"{num} es par")
+        digitos_pares += 1
+    elif num % 2 != 0:
+        print(f"{num} es impar")
+        digitos_impares += 1
+        out = input("desea agregar otro numero? Presione 1 para 'SI' y 0 para 'NO': ")
+    if out == 0:
+        break

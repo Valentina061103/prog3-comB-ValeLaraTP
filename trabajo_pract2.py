@@ -71,12 +71,12 @@ else:
     print("Acceso denegado")
 
 # Ejer9
-nombre=input("Ingrese su nombre : ")
+nombre=input("Ingrese su nombre : ").upper()
 sexo=input("Ingrese su sexo M/F : ").upper()
 if ( sexo=="F" and nombre[0]<"M") or (sexo=="M" and nombre[0]>"N"):
     print("Corresponde al grupo A")
 else:
-      print("Corresponde al grupo B")
+    print("Corresponde al grupo B")
 # Ejer 10
 edad = int(input("Ingrese su edad:  "))
 if edad<4 :
@@ -98,7 +98,7 @@ else :
     ingredientes=input(" Ingrediente elegido : ").lower()
 
 print(f"la pizza elegida {pizza} es vegetariana y el ingrediente elegido es {ingredientes}")
-# Ejer 13
+# Ejer 12
 ano_actual = int(input("ingrese el año actual: "))
 ano_cualquiera= int(input("ingrese un año cualquiera: "))
 suma=ano_actual-ano_cualquiera
@@ -121,18 +121,22 @@ if numero1%numero2==0 :
     print(" El numero mayor es múltiplo del menor")
 else:
     print("El numero mayor no es múltiplo del menor")
+
 # Ejer 14
 a= int(input("ingrese el número a: "))
 b= int(input("ingrese el número b: "))
-print(f"{a}x+{b}=0")
-x= -b / a
-print(f"x=-{b}/{a}")
-print("el resultado de su ecuacion es ",x)
+if a == 0:
+    print("la ecucion no tiene solucion")
+else:
+    print(f"{a}x+{b}=0")
+    x= -b / a
+    print(f"x=-{b}/{a}")
+    print("el resultado de su ecuacion es ",x)
 
 # Ejer15
 
 forma=input("Desea sacar el area de un triangulo o un circulo? ingrese 't' para triangulo y 'c' para circulo: ")
-forma.lower
+forma.lower()
 if(forma=="t"):
     base=int(input("ingrese la base del triangulo: "))
     altura=int(input("ingrese la altura del triangulo"))
@@ -144,11 +148,12 @@ elif(forma=="c"):
     print("el area del circulo es: ", area)
 else:
     print("error, el tipo de operacion ingresada no corresponde a lo pedido")
+
 # Ejer16
 num_1=int(input("ingrese el primer numero: "))
 num_2=int(input("ingrese el segundo numero: "))
 operacion=input("Que operacion desea realizar? ingrese '1' para suma, '2' para resta, '3' para multiplicacion y '4' para division: ")
-operacion.lower
+operacion.lower()
 if(operacion=="1"):
     suma=num_1+num_2
     print("la suma es: ", suma)
@@ -159,7 +164,7 @@ elif(operacion=="3"):
     multiplicacion=num_1*num_2
     print("la multiplicasion es: ", multiplicacion)
 elif(operacion=="4"):
-    if(num_1==0 or num_2==0):
+    if(num_2==0):
         print("no se puede dividir por cero")
     else:
         division=num_1/num_2
@@ -190,17 +195,17 @@ else:
     
 sal_total=(hora_t_min*sal_hora)+(hora_extra*sal_hora*1.1)
 print(f"Salario total: ${sal_total}")
+
 # Ejer19
 cantidad_lapiz=int(input("Ingrese la cantidad de lapices a comprar: "))
 costo_lapiz=60
+sin_descuento=costo_lapiz*cantidad_lapiz
 
 if cantidad_lapiz>=1000:
-    sin_descuento=costo_lapiz*cantidad_lapiz
     descuento=(sin_descuento*7)/100
     costo_total=sin_descuento-descuento
-    print(f"El monto total a pagar es de: ${costo_total}")
+    print(f"El monto total a pagar con un descuento del 7% por cantidad es de: ${costo_total}")
 else:
-    sin_descuento=costo_lapiz*cantidad_lapiz
     print(f"El monto total a pagar es de: ${sin_descuento}")
 
 # Ejer20

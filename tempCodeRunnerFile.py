@@ -1,12 +1,14 @@
-divider = 0
-while True:
-    num = int(input("Ingrese un número positivo, para indicar si es o no primo: "))
-    if num<=0:
+digitos_pares = 0
+digitos_impares = 0
+out = input("Bienvenido para ingresar empezar ingrese 1: ")
+while out != 0:
+    num = int(input("ingrese los numeros que quiere analizar: "))
+    if num % 2 == 0:
+        print(f"{num} es par")
+        digitos_pares += 1
+    elif num % 2 != 0:
+        print(f"{num} es impar")
+        digitos_impares += 1
+        out = input("desea agregar otro numero? Presione 1 para 'SI' y 0 para 'NO': ")
+    if out == 0:
         break
-    for i in range(num):
-        if num%(i+1) == 0 :
-            divider += 1
-    if divider == 2:
-        print("Es un número primo")
-    else:
-        print("No es primo")

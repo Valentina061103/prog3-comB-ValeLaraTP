@@ -11,11 +11,13 @@ for year in range(birthday_year+1) :
 
 #3 ​Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla todos los números impares desde 1 hasta ese número separados por comas. 
 postitive_num= int(input("Ingrese un numero entero positivo : ")) 
-odd_numbers=0 
-for e in range(postitive_num+1): 
+odd_numbers= ""
+for e in range(1,postitive_num+1,1): 
     if e%2!=0 : 
-        odd_numbers+=1
-        print(f" La cantidad de numeros impares es :  {odd_numbers}") 
+        odd_num = str(e)
+        odd_numbers += odd_num
+        odd_numbers += ","
+        print(f" Los numeros numeros impares son :  {odd_numbers}") 
 
 #4 ​Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás desde ese número hasta cero separados por comas. 
 num= int(input("Ingrese un numero entero positivo : ")) 
@@ -63,7 +65,7 @@ while (password != password2):
 #10 Escribir un programa que pida al usuario un número entero y muestre por pantalla si es un número primo o no.
 divider = 0
 while True:
-    num = int(input("Ingrese un número positivo, para indicar si es o no primo: "))
+    num = int(input("Ingrese un número positivo, para indicar si es o no primo, si desea sallir ingrese 0: "))
     if num<=0:
         break
     for i in range(num):
@@ -77,7 +79,30 @@ while True:
 #11 Escribir un programa que pida al usuario una palabra y luego muestre por pantalla una a una las letras de la palabra introducida empezando por la última.
 word = str(input("ingrese una palabra: "))
 word2 = word[::-1]
+print(f"la palabra invertida sera: {word2}")
 
+#12 Escribir un programa en el que se pregunte al usuario por una frase y una letra, y muestre por pantalla el número de veces que aparece la letra en la frase.
+phrase = str(input("ingrese una frase: "))
+letter = input("ingrese la letra que quiera buscra: ")
+count = phrase.count(letter)
+print(f"la letra elegida se repite {count} de veces en la frase escrita")
+
+#13 Escribir un programa que muestre el eco de todo lo que el usuario introduzca hasta que el usuario escriba “salir” que terminar
+word_13 = " "
+while word_13 != "salir":
+    word_13 = str((input("escriba algo: "))).lower()
+    echo = word_13
+    print(f"eco: {echo}")
+
+#14 Escriba un programa que pida dos números enteros y escriba qué números son pares y cuáles impares desde el primero hasta el segundo
+number=int(input("Ingrese un numero: "))
+number_2=int(input("Ingrese otro numero: "))
+print(f"Vamos a ver si los numeros que se encuentran entre {number} y {number_2} son pares o impares: ")
+for i in range(number,number_2+1):
+    if i %2==0:
+        print(f"Numero par: {i}")
+    else:
+        print(f"Numero impar: {i}")
 
 #15 Escriba un programa que pida un número entero mayor que cero y que escriba sus divisores
 while True:
@@ -120,3 +145,104 @@ for i in range(9) :
     sequence += num3
     sequence += " "
 print(sequence)
+
+#19 Escriba un programa que simule una alcancía. El programa solicitará primero una cantidad, que será la cantidad de dinero que queremos ahorrar.
+# A continuación, el programa solicitará una y otra vez las cantidades que se irán ahorrando, hasta que el total ahorrado iguale o supere al objetivo. 
+# El programa deberá comprobar que las cantidades ingresadas sean positivas
+objetive=int(input("ingrese la cantidad de dinero que desa ahorrar: "))
+save=0
+while (save<=objetive):
+    money=int(input("Cuanto vas a ingresar?"))
+    if (money>=0):
+        save+=money
+        print(save)
+    else:
+        print("no se pueden ingresar numeros negativos")
+        print("objetivo alcanzado")
+
+#20 Leer números enteros de teclado, hasta que el usuario ingrese el 0. Finalmente, mostrar la sumatoria de todos los números ingresado
+addition=0
+num=1
+while (num!=0):
+    num=int(input("ingrese un numero distinto de 0: "))
+    addition+=num
+print("la sumatoria de los numeros ingresados es: ", addition)
+
+#21 Leer números enteros positivos de teclado, hasta que el usuario ingrese el 0. Informar cuál fue el mayor número ingresado
+number=1
+max=0
+while (number!=0):
+    number=int(input("ingrese un numero distirnto a 0: "))
+    if(number>max):
+        max=number
+print("El mayor numero ingresado es: ", max)
+
+#22 Solicitar al usuario que ingrese números enteros positivos y, por cada uno, imprimir la suma de los dígitos que lo componen. 
+#La condición de corte es que se ingrese el número -1. Al finalizar, mostrar cuántos de los números ingresados por el usuario fueron números pares.
+number=0
+addition=0
+addition_2=0
+while(number!=-1):
+    number=int(input("Ingrese un numero, para salir ingrese '-1': "))
+    if (number>=0):
+        for n in str(number):
+            n=int(n)
+            addition+=n
+        print(addition)
+    else:
+        print("el numero ingresado debe ser positivo")
+    if (number % 2==0):
+        addition_2+=1
+    print("la cantidad de numeros ingresados pares son: ", addition_2)
+
+#23 ​Crear un programa que permita al usuario ingresar los montos de las compras de un cliente 
+# (se desconoce la cantidad de datos que cargará, la cual puede cambiar en cada ejecución), 
+# cortando el ingreso de datos cuando el usuario ingrese el monto 0. 
+amount_enter = 1
+while amount_enter != 0:
+    amount_enter = float(input("ingrese el monto de la compra para terminar ingrese 0:  "))
+    if amount_enter == 0:
+        print("Termino de cargar los montos")
+
+#24 Si ingresa un monto negativo, no se debe procesar y se debe pedir que ingrese un nuevo monto. 
+#Al finalizar, informar el total a pagar teniendo que cuenta que, si las ventas superan el total de $1000, 
+# se le debe aplicar un 10% de descuento. 
+print("ingrese los montos para calcular el total de su compra: ")
+total_amount = 0
+amount = 0
+out = 0
+while out !=1:
+    amount = float(input("ingrese el monto: "))
+    out = int(input("Para agregar otro monto ingrese '0' y para terminar ingrese '1': "))
+    if amount < 0:
+        print("monto invalido. Por favor ingrese nuevamente: ")
+        continue
+    total_amount += amount 
+if total_amount > 1000:
+    total_amount_discount = (total_amount - ((total_amount*10)/100))
+    print("el total a pagar es de: $", str(total_amount_discount), "con el descuento de %10 por la compra de mas de $1000")
+else:
+    total_amount = total_amount
+    print("el total a pagar es de: $", total_amount)
+
+#25 ​Dado un número entero positivo, mostrar su factorial. 
+#El factorial de un número se obtiene multiplicando todos los números enteros positivos que hay entre el 1 y ese número. 
+#El factorial de 0 es 1. 
+while True:
+    number = int(input("ingrese un numero entero para factorizar: ")) #si ve estos antes que la vea, le hago una consulta
+    if number < 0:                                                    #como puedo evitar que el usuario ingrese un numero con coma?
+        print("por favor ingrese un numero positivo")                 #porque en el if de la linea 233 quiese poner 'if number == float' se imprimera el mensaje
+    else:                                                             #pero no funciono
+        if number == 0:
+            print("el factorial de 0 es 1")                
+        continue                                                 
+    for i in range(number):
+        factor = number * i
+        print( number, " x ", i, " = ", factor)
+    out = input("Si quiere ingresar otro numero para factorear ingrese 'm' y si quiere salir ingrese 's': ")
+    out_low = out.lower()
+    if out_low == "m":
+        print("gracias por seguir con nosotros")
+    else:
+        print("gracias, vuelva pronto")
+        break

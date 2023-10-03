@@ -2,7 +2,6 @@ import math
 # Ejer 1 
 ano_computadora= float(input("Ingrese los años que tiene su computadora "))
 if ano_computadora<2 :
-   
     print("La computadora es nueva ")
 else:
     print("La computadora es vieja")
